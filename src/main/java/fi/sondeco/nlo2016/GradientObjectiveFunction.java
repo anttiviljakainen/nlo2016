@@ -1,8 +1,6 @@
 package fi.sondeco.nlo2016;
 
-public interface GradientObjectiveFunction {
-  
-  double f(double[] x);
+public interface GradientObjectiveFunction extends ObjectiveFunction {
   
   double[] gradient(double[] x);
   
