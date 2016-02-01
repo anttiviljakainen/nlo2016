@@ -4,9 +4,12 @@ def newtonDFP(f,start,step,precision):
     steps = []
     f_new = f(x)
     
-    H = ad.gh(f)[1](x)
+    H = np.eye(len(x))
     
     while abs(f_old - f_new) > precision:
+        #maybe here?
+        #H = H + ((x_delta * x_delta.transpose()) / (y.transpose() * x_delta)) - ((H * y * y.transpose() * H.transpose()) / (y.transpose() * H * y))
+        
         f_old = f_new
         
         grad = np.matrix(ad.gh(f)[0](x)).transpose()
