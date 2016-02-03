@@ -17,6 +17,10 @@ public class Exercise3 {
       
       double[] gradient = f.gradient(current);
       
+      // TODO: not component-wise, but:
+      // next = current + t * gradient
+      // t = scalar, optimized by golden search
+      
       for (int i = 0; i < current.length; i++) {
         GoldenGradientDescentFunction gradientFunc = new GoldenGradientDescentFunction(f, current, i);
         double goldenStep = Exercise2.goldenRatioSearch(-gradient[i], 0, gradientFunc, 0.001);
