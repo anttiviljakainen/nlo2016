@@ -33,6 +33,7 @@ public class NelderMead {
       points.add(tp);
     }
     
+    // TODO Termination criteria
     int iter = 1;
     while (iter < 10) {
       iter++;
